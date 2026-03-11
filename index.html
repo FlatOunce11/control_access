@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дискретная математика - Логические операции</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <section id="auth-section">
+            <h1>Система управления доступом</h1>
+            <p>Выберите профиль для авторизации:</p>
+            <div id="user-buttons" class="btn-group"></div>
+        </section>
+
+        <section id="main-section" class="hidden">
+            <nav class="navbar">
+                <div class="nav-links">
+                    <button onclick="router.navigate('cabinet')">Личный кабинет</button>
+                    <button id="nav-deanery" onclick="router.navigate('deanery')">Электронный деканат</button>
+                    <button id="nav-admin" onclick="router.navigate('admin')">Панель администрирования</button>
+                </div>
+                <div class="user-block">
+                    <span id="current-user-name"></span>
+                    <button class="btn-exit" onclick="auth.logout()">Выход</button>
+                </div>
+            </nav>
+
+            <div id="content-area">
+                <div id="error-plate" class="error-box hidden">
+                    <strong>Ошибка:</strong> недостаточно прав.
+                </div>
+                <div id="view"></div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
